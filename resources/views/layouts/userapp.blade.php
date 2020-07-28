@@ -11,8 +11,16 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -27,7 +35,8 @@
 <body>
     <div id="app">
 
-        <div class="card bg-primary rounded-circle shadow-xl mymenu menu-account" id="myaccount" style="position: fixed" >
+        <div class="card bg-primary rounded-circle shadow-xl mymenu menu-account" id="myaccount"
+            style="position: fixed">
             <i class="fa fa-user icon m-auto" style=" color: white;" aria-hidden="true"></i>
         </div>
         <main class="pt-4" style="padding-bottom: 100px">
@@ -36,14 +45,17 @@
         <nav class="p-3 fixed-bottom bg-white shadow-xl" style="box-shadow: 5px -5px 10px #888888">
             <div class="container">
                 <div class="d-flex justify-content-around">
-                    
-                    <a class="mynav-item mymenu" id="myhome" href="#home"><i class="fa fa-home m-auto" style="font-size: 300%;" aria-hidden="true"></i></a>
+
+                    <a class="mynav-item mymenu" id="myhome" href="#home"><i class="fa fa-home m-auto"
+                            style="font-size: 300%;" aria-hidden="true"></i></a>
                     <a class="mynav-item mymenu" id="adddata" href="#data">
-                        <div class="card bg-primary rounded-circle shadow-xl" style="width: 75px;height: 75px;margin-top: -50px;box-shadow: 5px -5px 10px #888888">
+                        <div class="card bg-primary rounded-circle shadow-xl"
+                            style="width: 75px;height: 75px;margin-top: -50px;box-shadow: 5px -5px 10px #888888">
                             <i class="fa fa-plus m-auto" style="font-size: 300%; color: white" aria-hidden="true"></i>
                         </div>
                     </a>
-                    <a class="mynav-item mymenu" id="notification" href="#notification"><i class="fa fa-bell m-auto" style="font-size: 300%;" aria-hidden="true"></i></a>
+                    <a class="mynav-item mymenu" id="notification" href="#notification"><i class="fa fa-bell m-auto"
+                            style="font-size: 300%;" aria-hidden="true"></i></a>
                 </div>
             </div>
         </nav>
@@ -130,4 +142,5 @@
         });
     })
 </script>
+
 </html>
