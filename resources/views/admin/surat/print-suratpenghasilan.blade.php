@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    @include('surat.component/print-style')
+    @include('admin.surat.component/print-style')
     @inject('carbon', 'Carbon\Carbon')
     
 </head>
@@ -17,7 +17,7 @@
             <div>
                 <div width="100%">
                     <div align="center">
-                        @include('surat.component/kop')
+                        @include('admin.surat.component/kop')
 
                         <p style="margin-top: 40pt;" class="kop18 bold">
                             <u>
@@ -25,7 +25,7 @@
                             </u>
                         </p>
 
-                        <p style="margin-bottom: 10pt;" class="kop12">Nomor : 470.2 / 01 / 430.11.7.5/ 345</p>
+                        <p style="margin-bottom: 10pt;" class="kop12">Nomor : 470.2 / {{ $data->mail_number }} / 430.11.7.5/ {{ $carbon->now()->isoFormat('YYYY') }}</p>
                         <div class="clear"></div>
 
                     </div>
@@ -38,17 +38,12 @@
                     <tr>
                             <td width="23%">Nama  </td>
                             <td width="3%">:</td>
-                            <td width="64%">kepala desa</td>
-                        </tr>
-                        <tr>
-                            <td>NIP/NIK </td>
-                            <td>:</td>
-                            <td>dkffndkjdf</td>
+                            <td width="64%">{{ $maildata['ttd'] }}</td>
                         </tr>
                         <tr>
                             <td>Jabatan </td>
                             <td>:</td>
-                            <td>kepala desa ....</td>
+                            <td>{{ $maildata['jabatanttd'] }}</td>
                         </tr>
                     </table>
                     <div class="indentasi">Menerangkan dengan sebenarnya ,bahwa :
@@ -56,44 +51,55 @@
                     <table style="padding-left: 40px;" width="100%">
                        
                         <tr>
-                            <td width="23%">I. Nama Orang tua/wali</td>
+                            <td width="3%">I.</td>
+                            <td width="20%">Nama Orang tua/wali</td>
                             <td width="3%">:</td>
-                            <td width="64%">mmmmmmmmmm</td>
+                            <td width="64%">{{ $data->userdata->name }}</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Jenis Kelamin </td>
                             <td>:</td>
-                            <td>dkffndkjdf</td>
+                            <td>{{ $data->userdata->gender->name }}</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Tempat dan Tgl. Lahir </td>
                             <td>:</td>
-                            <td>dkffndkjdf</td>
+                            <td>{{ $data->userdata->born }}/ {{ $carbon->parse($data->userdata->birthdate)->isoFormat(' D MMMM YYYY') }}</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>NIK </td>
                             <td>:</td>
-                            <td>11111111111111</td>
+                            <td>{{ $data->user_data_id }}</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Agama </td>
                             <td>:</td>
-                            <td>islam</td>
+                            <td>{{ $data->userdata->gender->name }}</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Status Perkawinan</td>
                             <td>:</td>
-                            <td>skdkdmdm</td>
+                            <td>{{ $data->userdata->maritalStatus->name }}</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Pekerjaan </td>
                             <td>:</td>
-                            <td>skdkdmdm</td>
+                            <td>{{ $data->userdata->job->name }}</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Alamat </td>
                             <td>:</td>
-                            <td> Dusun  RT RW  Desa  Kec. Kabupaten Jember</td>
+                            <td>Dusun {{ $data->userdata->dusun }}, RT {{ $data->userdata->rt }} / RW.
+                                {{ $data->userdata->rw }}
+                                Desa Jenggawah Kecamatan Jenggawah
+                                Kabupaten Jember</td>
                         </tr>
                     </table>
                     <div class="indentasi">Adalah warga kami , Desa Jenggawah Kecamatan 
@@ -101,41 +107,45 @@
                     </div>
                     <table style="padding-left: 40px;" width="100%">
                         <tr>
-                            <td>Nama Anak</td>
-                            <td>:</td>
-                            <td>ksksksk</td>
+                            <td width="3%">II.</td>
+                            <td width="20%" >Nama Anak</td>
+                            <td width="3%" >:</td>
+                            <td width="64%" >{{ $maildata['namaanak'] }}</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>NIK</td>
                             <td>:</td>
-                            <td>111111111111</td>
+                            <td>{{ $maildata['nikanak'] }}</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Asal Sekolah</td>
                             <td>:</td>
-                            <td>kdkdkdk</td>
+                            <td>{{ $maildata['asalsekolah'] }}</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Tempat/Tgl Lahir</td>
                             <td>:</td>
-                            <td> wwwww</td>
+                            <td>{{ $maildata['tmptlahir'] }} / {{ $carbon->parse($maildata['tgllahir'])->isoFormat('DD MMMM YYYY') }}</td>
                         </tr>
                        
                     </table>
                     <div class="indentasi">
-                    Adapun orang tua ( wali ) dari anak tersebut diatas mempunyai penghasilan setiap bulannya kurang lebih   Rp 2.500.000, 00 ( Dua Juta Lima Ratus Ribu Rupiah ).
-                    Surat Keterangan ini dipergunakan untuk : Persyaratan Melengkapi Verifikasi data kuliah.
+                    Adapun orang tua ( wali ) dari anak tersebut diatas mempunyai penghasilan setiap bulannya {{ $maildata['penghasilan'] }}.
+                    Surat Keterangan ini dipergunakan untuk : {{ $maildata['keperluan'] }}.
 
                     </div>
                     <div style="margin-top: 10pt;" class="indentasi">
                     Demikian surat keterangan ini dibuat berdasarkan kenyataan dan pengamatan kami, untuk dipergunakan sebagaimana mestinya. Apabila keterangan ini tidak sesuai dengan kenyataan yang ada, 
-                    maka kami siap menerima resiko dan tindakan yang diambil oleh Universitas Jember.
+                    maka kami siap menerima resiko dan tindakan yang diambil oleh Pihak Ketiga.
                     </div>
                 </div>
                 <table class="ttd" width="100%">
 
                    
-                @include('surat.component/standart-footer')
+                @include('admin.surat.component/standart-footer')
         </div>
     </div>
     <div id="aside"></div>

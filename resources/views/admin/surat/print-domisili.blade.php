@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    @include('surat.component/print-style')
+    @include('admin.surat/component/print-style')
     @inject('carbon', 'Carbon\Carbon')
 </head>
 
@@ -16,14 +16,14 @@
             <div>
                 <div width="100%">
                     <div align="center">
-                        @include('surat.component/kop')
+                        @include('admin.surat/component/kop')
                         <p style="margin-top: 30pt;" class="kop18 bold">
                             <u>
                                 SURAT KETERANGAN
                             </u>
                         </p>
 
-                        <p style="margin-bottom: 10pt;" class="kop12">Nomor : 470 / 01 / 35.09.16.2003/2020 </p>
+                        <p style="margin-bottom: 10pt;" class="kop12">Nomor : 470 / {{ $data->mail_number }} / 35.09.16.2003/ {{ $carbon->now()->isoFormat('YYYY') }} </p>
                         <div class="clear"></div>
 
                     </div>
@@ -48,22 +48,22 @@
                         <tr>
                             <td width="23%">Nama </td>
                             <td width="3%">:</td>
-                            <td width="64%">almas</td>
+                            <td width="64%">{{ $data->userdata->name }}</td>
                         </tr>
                         <tr>
                             <td width="23%">Jenis Kelamin</td>
                             <td width="3%">:</td>
-                            <td width="64%">laki-laki</td>
+                            <td width="64%">{{ $data->userdata->gender->name }}</td>
                         </tr>
                         <tr>
                             <td width="23%">Tempat/Tgl.Lahir/Umur</td>
                             <td width="3%">:</td>
-                            <td width="64%">Jember, 17-07-1986</td>
+                            <td width="64%">{{ $data->userdata->born }}/ {{ $carbon->parse($data->userdata->birthdate)->isoFormat(' D MMMM YYYY') }}</td>
                         </tr>
                         <tr>
                             <td width="23%">N I K</td>
                             <td width="3%">:</td>
-                            <td width="64%">3509090909090909</td>
+                            <td width="64%">{{ $data->userdata->nik }}</td>
                         </tr>
                         <tr>
                             <td width="23%">Kewarganegaraan</td>
@@ -73,22 +73,22 @@
                         <tr>
                             <td width="23%">Agama</td>
                             <td width="3%">:</td>
-                            <td width="64%">Islam</td>
+                            <td width="64%">{{ $data->userdata->religion->name }}</td>
                         </tr>
                         <tr>
                             <td width="23%">Status  Perkawinan</td>
                             <td width="3%">:</td>
-                            <td width="64%">Belum Kawin</td>
+                            <td width="64%">{{ $data->userdata->maritalStatus->name }}</td>
                         </tr>
                         <tr>
                             <td width="23%">Pekerjaan</td>
                             <td width="3%">:</td>
-                            <td width="64%">pelajar</td>
+                            <td width="64%">{{ $data->userdata->job->name }}</td>
                         </tr>
                         <tr>
                             <td>Alamat</td>
                             <td>:</td>
-                            <td>Dusun Krajan,  RT 015 / RW. 002
+                            <td>Dusun {{ $data->userdata->dusun }},  RT {{ $data->userdata->rt }} / RW. {{ $data->userdata->rw }}
                             Desa Jenggawah Kecamatan Jenggawah
                             Kabupaten Jember
                             </td>
@@ -99,14 +99,14 @@
                     Orang  tersebut diatas benar-benar penduduk Desa Jenggawah Kecamatan Jenggawah Kabupaten Jember, dan saat ini masih berdomisili dialamat tersebut diatas, dan KTP yang bersangkutan masih dalam proses. 
                     </div>
                     <div class="indentasi">
-                    Surat keterangan ini dipergunakan untuk :  Kelengkapan administrasi penerimaan BPNT
+                    Surat keterangan ini dipergunakan untuk :  {{ $maildata['keperluan'] }}
                     </div>
                     <div class="indentasi">
                     Demikian surat keterangan ini dibuat dan untuk dapatnya dipergunakan sebagaimana mestinya.
                     </div>
                 </div>
                 </div>
-                @include('surat.component/standart-footer')
+                @include('admin.surat.component/standart-footer')
             </div>
         </div>
         <div id="aside"></div>

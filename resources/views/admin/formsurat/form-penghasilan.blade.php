@@ -60,7 +60,7 @@
             <option @if ($maildata['penghasilan']=="Rp 5.000.000 - Rp 8.000.000" ) selected @endif
                 value="Rp 5.000.000 - Rp 8.000.000">Rp 5.000.000 - Rp 8.000.000</option>
             <option @if ($maildata['penghasilan']=="Diatas Rp 8.000.000" ) selected @endif value="Diatas Rp 8.000.000">
-                Dibawah Rp 8.000.000</option>
+                Diatas Rp 8.000.000</option>
         </select>
     </div>
     <div class="form-group mt-3">

@@ -147,6 +147,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $data->render() }}
     </div>
 </div>
 

@@ -100,7 +100,7 @@ class DataController extends Controller
             $adddata = UserData::where('id',$request->id)->first();
             Storage::delete('public/images_data/' . $adddata->img);
             $image = $request->file('file');
-            $n_image = 'kkn-' . $request->nama. '-' . time() . '.' . $image->getClientOriginalExtension();
+            $n_image = 'kkn-' . $request->nam. '-' . time() . '.' . $image->getClientOriginalExtension();
             $image->storeAs('public/images_data', $n_image);
             $adddata->update([
                 'user_id'=> Auth::user()->id,

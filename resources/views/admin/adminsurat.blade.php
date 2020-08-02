@@ -52,7 +52,7 @@
                     </td>
                     <td>
                         @if ($item->mail_number != null)
-                        <a href="#" class="btn btn-success">
+                        <a href="{{ route('surat.print',$item->id) }}" class="btn btn-success">
                             <i class="fa fa-print"></i>
                         </a>
                         @endif
@@ -68,8 +68,10 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $data->render() }}
     </div>
 </div>
+
 
 <div class="modal fade" id="penduduk" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLabel" aria-hidden="true">

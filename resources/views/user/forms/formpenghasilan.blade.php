@@ -35,7 +35,7 @@
                     <option value="Dibawah Rp 2.500.000">Dibawah Rp 2.500.000</option>
                     <option value="Dibawah Rp 5.000.000">Dibawah Rp 5.000.000</option>
                     <option value="Rp 5.000.000 - Rp 8.000.000">Rp 5.000.000 - Rp 8.000.000</option>
-                    <option value="Diatas Rp 8.000.000">Dibawah Rp 8.000.000</option>
+                    <option value="Diatas Rp 8.000.000">Diatas Rp 8.000.000</option>
                 </select>
             </div>
             <div class="form-group d-flex justify-content-around">
