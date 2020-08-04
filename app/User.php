@@ -38,4 +38,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\UserData');
     }
+
+    public function isRole($role)
+    {
+      return $this->roles == $role;
+    }
 }

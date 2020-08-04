@@ -67,6 +67,7 @@
         var route = '/'+$(this).attr('id');
         var div = $('#content');
         var spinner = $('#spinner');
+        console.log('route');
         $.ajax({
             type:'GET',
             url: route,

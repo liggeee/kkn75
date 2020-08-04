@@ -4,7 +4,7 @@
 <head>
     <!-- Metas -->
     <meta charset="utf-8">
-    <title>Foxebiz - Multipurpose html template</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Css -->
@@ -54,7 +54,7 @@
                     <nav class="navbar navbar-expand-lg header-navbar ">
                         <div class="navbar-brand">
                             <a class=" navbar-brand navbar-logo" href="index.html">
-                                <img class="mb-0" src="assets/svg/logo.svg" alt="">
+                                <h3>{{ config('app.name', 'Laravel') }}</h3>
                             </a>
                         </div>
                         <button class="navbar-toggler btn-navbar-toggler" type="button" data-toggle="collapse"

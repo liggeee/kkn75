@@ -16,8 +16,8 @@ class PageController extends Controller
 {
     public function home()
     {
-        $data = UserData::where('user_id',Auth::user()->id)->get();
-        return view('user.components/mydata',compact('data'));
+        $data = UserData::where('user_id', Auth::user()->id)->get();
+        return view('user.components/mydata', compact('data'));
     }
 
     public function data()
@@ -27,20 +27,20 @@ class PageController extends Controller
         $educations = Education::all();
         $religions = Religion::all();
         $marital_status = MaritalStatus::all();
-        return view('user.components/adddata',compact('genders','marital_status','religions','educations','jobs'));
+        return view('user.components/adddata', compact('genders', 'marital_status', 'religions', 'educations', 'jobs'));
     }
 
     public function notifications()
     {
         $data = MailData::with(['userdata' => function ($query) {
-            $query->where('user_id',Auth::user()->id);
-        }])->limit(10)->orderBy('id','desc')->get();
+            $query->where('user_id', Auth::user()->id);
+        }])->limit(10)->orderBy('id', 'desc')->get();
         // dd($data);
-        return view('user.components/notification',compact('data'));
+        return view('user.components/notification', compact('data'));
     }
 
     public function myaccount()
     {
-        # code...
+        return view('user.components/account');
     }
 }
