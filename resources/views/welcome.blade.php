@@ -54,7 +54,7 @@
                     <nav class="navbar navbar-expand-lg header-navbar ">
                         <div class="navbar-brand">
                             <a class=" navbar-brand navbar-logo" href="index.html">
-                                <h3>{{ config('app.name', 'Laravel') }}</h3>
+                               <b><h3>{{ config('app.name', 'Laravel') }}</h3></b>
                             </a>
                         </div>
                         <button class="navbar-toggler btn-navbar-toggler" type="button" data-toggle="collapse"
@@ -63,7 +63,7 @@
                         </button>
                         <div class="nav-menu collapse navbar-collapse navbar-collapse justify-content-end py-0 ">
                             <ul class=" navbar-nav  header-navbar-nav">
-                                <li><a class=" nav-link" href="index.html">Home</a></li>
+                                <li><a class=" nav-link" href="#">Home</a></li>
 
                                 <li class="btn-nav mr-lg-3"><a class="btn btn-primary btn-sm " href="#login"
                                         data-toggle="modal" data-target="#login"><span
@@ -78,23 +78,14 @@
         <!--Hero section-->
         <section class="hero">
             <div class="background-img gradient-overlay gradient-overlay-dark">
-                <img src="{{ asset('assets/img/1.jpg') }}" alt="">
+                <img src="{{ asset('assets/img/home1.jpg') }}" alt="">
             </div>
             <div class="container height-70vh">
                 <div class="row justify-content-center text-center">
                     <div class="col-12 col-md-10 col-lg-10">
-                        <h1 class="display-4 mb-3 text-white">Start your Business <span
-                                class="typed font-weight-600"></span></h1>
-                        <p class="lead mb-5 text-white">Build an online presence with this professional <br>bootstrap 4
-                            template.</p>
-                        {{-- <a class="btn btn-primary btn-sm " href="#login" data-toggle="modal" data-target="#login"><span
-                                class="fa fa-user-circle mr-1"></span>Signin</a>
-                        <a class="play-but text-center mt-3 popup-youtube"
-                            href="https://www.youtube.com/watch?v=Gc2en3nHxA4">
-                            <span class="play-icon play-icon-md">
-                                <span class="fa fa-play play-icon-inner"></span>
-                            </span>
-                        </a> --}}
+                        <h1 class="display-4 mb-3 text-white">Desa Jenggawah<span class="typed font-weight-600"></span>
+                        </h1>
+                        <p class="lead mb-5 text-white">Buat Berkas Surat Secara Online dengan<br>E-Surat Jenggawah</p>
                     </div>
                 </div>
             </div>
@@ -107,11 +98,9 @@
                 <div class="row justify-content-center">
                     <div class="col ">
                         <div class="mb-5  text-center">
-                            <h1>Start your business easly with Foxebiz</h1>
-                            <p class="w-md-75 mb-0 mx-auto">Foxebiz is global communication agency
-                                adapting itself to every type of customer, our work with clients has always been at the
-                                intersection of deep
-                                industry expertise and extensive capabilities.
+                            <h1>Buat Surat Anda Secara Online sekarang</h1>
+                            <p class="w-md-75 mb-0 mx-auto">Pembuatan Surat yang mudah secara online, dengan tujuan
+                                mengurangi adanya kontak fisik yang dampat menghambat penyebaran virus corona
                             </p>
                         </div>
                     </div>
@@ -124,8 +113,8 @@
                 <!--Row-->
                 <div class="row justify-content-center text-center">
                     <div class="col">
-                        <a class="btn btn-primary btn-wide mb-2 mb-md-0 mr-md-2" href="javascript:;">Start a project</a>
-                        <a class="btn btn-blue-night btn-wide mb-2 mb-md-0" href="javascript:;">Learn More</a>
+                        <a class="btn btn-primary btn-wide mb-2 mb-md-0 mr-md-2" data-toggle="modal"
+                            data-target="#register" href="javascript:;">Sign Up Now</a>
                     </div>
                 </div>
                 <!--End row-->
@@ -151,63 +140,27 @@
                     <div class="col-md-4 mb-4 mb-lg-0">
                         <div class="text-center px-3">
                             <img class="max-width-md mb-3" src="assets/svg/startup-icon.svg" alt="">
-                            <h3 class="h5">Professional Design</h3>
-                            <p class="mb-0">A mobile browser is a web browser designed for use on a mobile.</p>
+                            <h3 class="h5">Tampilan Yang Mudah</h3>
+                            <p class="mb-0">Dapan digunakan di Mobile maupun desktop App</p>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4 mb-lg-0">
                         <div class="text-center px-3">
                             <img class="max-width-md mb-3" src="assets/svg/idea-icon.svg" alt="">
-                            <h3 class="h5">Modern Workflow</h3>
-                            <p class="mb-0 ">A mobile browser is a web browser designed for use on a mobile.</p>
+                            <h3 class="h5">Pengajuan Yang Cepat</h3>
+                            <p class="mb-0 ">Pengajuan berbasis online menambah kecepatan pembuatan</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="text-center px-3">
                             <img class="max-width-md mb-3" src="assets/svg/target-icon.svg" alt="">
-                            <h3 class="h5 ">Real-Time Results</h3>
-                            <p class="mb-0  ">A mobile browser is a web browser designed for use on a mobile.</p>
+                            <h3 class="h5 ">Hasil Langsung</h3>
+                            <p class="mb-0  ">Mendapatkan Notifikasi ketika surat telah disetujui</p>
                         </div>
                     </div>
                 </div>
                 <!--End row-->
             </div>
-            <!--End container-->
-            <!--Container-->
-            {{-- <div class="container  mt-5 pt-5">
-                <!--Row-->
-                <div class="row justify-content-center text-left">
-                    <div class="col">
-                        <div class="bg-azure p-5 rounded shadow-lg">
-                            <div class="p-lg-4">
-                                <img class="max-width-sm ml-sm-4 mb-4 " src="assets/svg/quote-icon.svg" alt="">
-                                <div class="bg-review-slider flexslider p-sm-4 pt-0">
-                                    <ul class="slides">
-                                        <li>
-                                            <blockquote class="h4 text-white font-weight-light mb-5">There was a
-                                                constant flow of intellectual questioning about the truth of life. That
-                                                was a time when every college student in this country read Be Here Now
-                                                and Diet for a Small Planet there were about ten books</blockquote>
-                                            <h3 class="h6 text-white mb-0">Steve Jobs</h3>
-                                            <span class="d-block text-light font-size-14">Business magnate</span>
-                                        </li>
-                                        <li>
-                                            <blockquote class="h4 text-white font-weight-light mb-5">There was a
-                                                constant flow of intellectual questioning about the truth of life. That
-                                                was a time when every college student in this country read Be Here Now
-                                                and Diet for a Small Planet there were about ten books</blockquote>
-                                            <h3 class="h6 text-white mb-0">Steve Jobs</h3>
-                                            <span class="d-block text-light font-size-14">Business magnate</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End row-->
-            </div> --}}
-            <!--End container-->
         </section>
 
         <footer class="bg-dark spacer-double-md">
@@ -217,10 +170,9 @@
                 <div class="row justify-content-between">
                     <div class="col-lg-4 d-flex align-items-start flex-column">
                         <a class="d-inline-block mb-4" href="javascript:;">
-                            <img src="assets/svg/logo-light.svg" class="footer-logo" alt="">
+                            <b style="color: #fff">E-Surat Jenggawah</b>
                         </a>
-                        <p class="font-size-12 text-light">&copy; 2019 all rights reserved - MutationMedia. <br>A
-                            product of mutationthemes.</p>
+                        <p class="font-size-12 text-light">&copy; 2019 all rights reserved </p>
                     </div>
                     <div class="col-6 col-md-4 col-lg-2 mb-0">
                         <h3 class="h6 text-white mb-3 font-weight-600">About us</h3>
@@ -239,16 +191,18 @@
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-lg-3  mb-0">
-                        <h3 class="h6 text-white mb-3 font-weight-600">Social hubs</h3>
+                        <h3 class="h6 text-white mb-3 font-weight-600">Supported by</h3>
                         <ul class="list-inline mb-0">
-                            <li class="list-inline-item mb-2 mb-lg-0 mr-1"><a class="social-icon"
-                                    href="javascript:;"><span class="fab fa-facebook-f"></span></a></li>
-                            <li class="list-inline-item mr-1"><a class="social-icon " href="javascript:;"><span
-                                        class="fab fa-twitter"></span></a></li>
-                            <li class="list-inline-item mr-1"><a class="social-icon " href="javascript:;"><span
-                                        class="fab fa-youtube"></span></a></li>
-                            <li class="list-inline-item"><a class="social-icon " href="javascript:;"><span
-                                        class="fab fa-linkedin"></span></a></li>
+                            <li class="list-inline-item mb-2 mb-lg-0 mr-1">
+                                <a style="width: 50px" href="javascript:;">
+                                    <img style="width: inherit" src="{{ asset('assets/img/unej.png') }}" alt="">
+                                </a>
+                            </li>
+                            <li class="list-inline-item mr-1">
+                                <a style="width: 70px" href="javascript:;">
+                                    <img style="width: inherit" src="{{ asset('assets/img/kkn75.png') }}" alt="">
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
