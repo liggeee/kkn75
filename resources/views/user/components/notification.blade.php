@@ -2,7 +2,6 @@
 $i = 0;
 @endphp
 @if (!$data->isEmpty())
-
 @foreach ($data as $item)
 @php
 $i++;
@@ -36,5 +35,4 @@ $i++;
     </div>
 </div>
 @endforeach
-
 @endif

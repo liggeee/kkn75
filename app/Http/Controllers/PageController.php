@@ -32,9 +32,9 @@ class PageController extends Controller
 
     public function notifications()
     {
-        $data = MailData::with(['userdata' => function ($query) {
-            $query->where('user_id', Auth::user()->id);
-        }])->limit(10)->orderBy('id', 'desc')->get();
+        $data = MailData::whereHas('userdata.user', function ($query){ 
+            $query->where('users.id', '=', Auth::user()->id); 
+        })  ->limit(10)->orderBy('id', 'desc')->get();
         // dd($data);
         return view('user.components/notification', compact('data'));
     }
