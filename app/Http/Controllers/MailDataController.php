@@ -289,8 +289,8 @@ class MailDataController extends Controller
         }elseif ($jenis == 7) {
             $pdf = PDF::loadView('admin.surat/print-suratSKCK', compact('data', 'maildata'));
             $pdf->setPaper('Legal', 'potrait');
-            return view('admin.surat/print-suratSKCK', compact('data', 'maildata'));
-            // return $pdf->stream('rekap.pdf');
+            // return view('admin.surat/print-suratSKCK', compact('data', 'maildata'));
+            return $pdf->stream('rekap.pdf');
         }
     }
 }
