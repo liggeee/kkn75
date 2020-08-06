@@ -119,15 +119,6 @@
                     <tr>
                         <td></td>
                     </tr>
-                    <tr>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                    </tr>
 
                     <tr>
                         <td align="center">Mengetahui</td>
