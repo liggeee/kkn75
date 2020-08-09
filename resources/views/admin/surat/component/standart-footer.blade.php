@@ -6,7 +6,7 @@
     <tr>
         <td width="23%"></td>
         <td width="30%"></td>
-        <td align="center">Penambangan, {{ $carbon->now()->isoFormat('dddd, D MMMM YYYY') }}</td>
+        <td align="center">Jenggawah, {{ $carbon->now()->isoFormat('dddd, D MMMM YYYY') }}</td>
     </tr>
     <tr>
         <td width="23%"></td>
