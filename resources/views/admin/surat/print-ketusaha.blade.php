@@ -24,8 +24,8 @@
                             </u>
                         </p>
 
-                        <p style="margin-bottom: 10pt;" class="kop12">Nomor : 470.2 / {{ $data->mail_number }} /
-                            430.11.7.5/ {{ $carbon->now()->isoFormat('YYYY') }}</p>
+                        <p style="margin-bottom: 10pt;" class="kop12">Nomor : 500 / {{ $data->mail_number }} /
+                            35.09.16.2003/ {{ $carbon->now()->isoFormat('YYYY') }}</p>
                         <div class="clear"></div>
 
                     </div>
